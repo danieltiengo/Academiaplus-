@@ -10,7 +10,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class UserPerfilPage implements OnInit {
   key:string = null;
-  user:User; 
+  user: User = new User; 
 
   constructor(
     private activatedRouter: ActivatedRoute,
