@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Academia Plus - Perfil do Usuário
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-list>
+  <ion-item>
+    <img src="assets/perfil.jpg" alt="">
+  </ion-item>
+
+  <ion-item>
+  <ion-label>Nome: {{user.nome}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>E-mail: {{user.email}}</ion-label>
+  </ion-item>
+ </ion-list>
+
+ <!--Botão do Endereço-->
+  <ion-button routerLink="/tabs/endereco-add/{{key}}">
+    <ion-icon name="map-outline"></ion-icon>
+  </ion-button> 
+
+</ion-content> 
