@@ -20,18 +20,18 @@ export class EnderecoService {
     return this.http.get<Endereco>(local);
   }
 
-  add(usuario:Endereco){
+  add(endereco:Endereco){
     return this.firedb.collection<Endereco>("enderecos").add(
       {
-        
-        bairro : usuario.bairro,
-        cep: usuario.cep,
-        logradouro : usuario.logradouro,
-        localidade: usuario.localidade,
-        uf: usuario.uf,
-        complemento:usuario.complemento,
-        numero: usuario.numero,
-        erro: usuario.erro
+        userkey:endereco.userkey,
+        bairro : endereco.bairro,
+        cep: endereco.cep,
+        logradouro : endereco.logradouro,
+        localidade: endereco.localidade,
+        uf: endereco.uf,
+        complemento:endereco.complemento,
+        numero: endereco.numero,
+        erro: endereco.erro
       }
     )
   }

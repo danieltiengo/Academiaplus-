@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { map } from 'rxjs/operators';
+import { AngularFireAuth } from "@angular/fire/auth";
 
 @Injectable({
   providedIn: "root"
@@ -10,22 +11,26 @@ import { map } from 'rxjs/operators';
 export class UserServiceService {
   constructor(
     private http: HttpClient,
-    private firedb:AngularFirestore
+    private firedb:AngularFirestore,
+    private auth : AngularFireAuth
   ) { }
 
  
 
   add(usuario:User){
-    return this.firedb.collection<User>("usuarios").add(
-      {
+    return this.auth.createUserWithEmailAndPassword(usuario.email, usuario.senha).then(
+    (res) =>{
+      return this.firedb.collection<User>("usuarios").doc(res.user.uid).set({
         nome : usuario.nome,
         email: usuario.email,
         senha: usuario.senha,
-     
-      }
-
-    )
-  }
+      });
+    },
+    erro=>{
+      
+    }
+    );  
+ }
 
   getAll(){
     //return this.firedb.collection<User>("usuarios").valueChanges()
