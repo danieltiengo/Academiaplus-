@@ -1,10 +1,9 @@
-<ion-app>
 
   <ion-header>
     <ion-icon name="menu-outline" (click)="openFirst()"></ion-icon>
   </ion-header>
-
-<ion-menu side="start" menuId="first" contentId="main">
+  
+  <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
@@ -12,14 +11,17 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>Inicio</ion-item>
-        <ion-item>login</ion-item>
-        <ion-item>Conteudo</ion-item>
-        <ion-item>Exercicios</ion-item>
+        <ion-item routerLink="/inicio">Inicio</ion-item>
+        <ion-item routerLink="/login">ficha de Treino</ion-item>
+        <ion-item>vai </ion-item>
+        <ion-item>toma</ion-item>
+        <ion-item>no cu </ion-item>
+        <ion-item>Corona</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
-
-  <ion-router-outlet id="main"></ion-router-outlet>
-  <ion-router-outlet></ion-router-outlet>
+  
+  <ion-app>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  //<ion-router-outlet></ion-router-outlet>
 </ion-app>
