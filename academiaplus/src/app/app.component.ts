@@ -38,4 +38,7 @@ export class AppComponent {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
   }
+  close(){
+    this.menu.close();
+  }
 }
