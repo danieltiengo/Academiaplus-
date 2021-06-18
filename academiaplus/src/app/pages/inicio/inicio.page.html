@@ -3,7 +3,79 @@
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!-- Default Refresher -->
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+    pullingIcon="chevron-down-circle-outline"
+    pullingText="Pull to refresh"
+    refreshingSpinner="circles"
+    refreshingText="Atualizando...">
+
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+  
+    <ion-card-header>
+     <ion-card-subtitle>Monsters Lab</ion-card-subtitle>
+     <ion-card-title>Lançamento do App Monsters Lab</ion-card-title>
+    </ion-card-header>
+   
+    <ion-card-content>
+     Com muita alegria anunciamos nosso novo app...<p></p>
+    <ion-button fill="outline" slot="end">Veja mais</ion-button>
+    </ion-card-content>
+    
+   </ion-card>
+
+   <ion-card>
+  
+    <ion-card-header>
+     <ion-card-subtitle>Monsters Lab</ion-card-subtitle>
+     <ion-card-title>Lançamento do App Monsters Lab</ion-card-title>
+    </ion-card-header>
+   
+    <ion-card-content>
+     Com muita alegria anunciamos nosso novo app...<p></p>
+     <ion-button fill="outline" slot="end">Veja mais</ion-button>
+    </ion-card-content>
+    
+   </ion-card>
+
+   <ion-card>
+  
+    <ion-card-header>
+     <ion-card-subtitle>Monsters Lab</ion-card-subtitle>
+     <ion-card-title>Lançamento do App Monsters Lab</ion-card-title>
+    </ion-card-header>
+   
+    <ion-card-content>
+     Com muita alegria anunciamos nosso novo app...<p></p>
+     <ion-button fill="outline" slot="end">Veja mais</ion-button>
+    </ion-card-content>    
+   </ion-card>
+
+   <ion-card>
+  
+    <ion-card-header>
+     <ion-card-subtitle>Monsters Lab</ion-card-subtitle>
+     <ion-card-title>Lançamento do App Monsters Lab</ion-card-title>
+    </ion-card-header>
+   
+    <ion-card-content>
+     Com muita alegria anunciamos nosso novo app...<p></p>
+     <ion-button fill="outline" slot="end">Veja mais</ion-button>
+    </ion-card-content>
+    
+   </ion-card>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>
+
+
