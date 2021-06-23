@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonInfiniteScroll } from '@ionic/angular';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-inicio',
@@ -8,8 +10,10 @@ import { IonInfiniteScroll } from '@ionic/angular';
 })
 export class InicioPage implements OnInit {
 @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+user:User=new User
+  constructor(private router:Router) { 
 
-  constructor() { }
+  }
 
   doRefresh(event) {
   console.log('Begin async operation');
@@ -22,6 +26,8 @@ export class InicioPage implements OnInit {
   
   
   ngOnInit() {
+    //this.user.ajuda=true;
+    this.verificaapresentacao();
   }
 
   loadData(event) {
@@ -31,8 +37,9 @@ export class InicioPage implements OnInit {
 
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
-      if (data.length == 1000) {
-        event.target.disabled = true;
+     // if (data.length == 1000)
+      {
+      event.target.disabled = true;
       }
     }, 500);
   }
@@ -40,7 +47,11 @@ export class InicioPage implements OnInit {
   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
-}
 
+  verificaapresentacao(){
+    if(this.user.ajuda==false) 
+    this.router.navigate(["/apresentacao"])
+  }
+}
 
 
