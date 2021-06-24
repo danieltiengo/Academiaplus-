@@ -24,6 +24,7 @@ export class UserServiceService {
         nome : usuario.nome,
         email: usuario.email,
         senha: usuario.senha,
+        ajuda: usuario.ajuda
       });
     },
     erro=>{
