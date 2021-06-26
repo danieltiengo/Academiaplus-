@@ -37,7 +37,27 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
 
- 
+  {
+    path: 'apresentacao',
+    loadChildren: () => import('./pages/apresentacao/apresentacao.module').then( m => m.ApresentacaoPageModule)
+  },  {
+    path: 'ficha-de-treino',
+    loadChildren: () => import('./ficha-de-treino/ficha-de-treino.module').then( m => m.FichaDeTreinoPageModule)
+  },
+  {
+    path: 'check-in',
+    loadChildren: () => import('./check-in/check-in.module').then( m => m.CheckInPageModule)
+  },
+  {
+    path: 'recordes-pessoais',
+    loadChildren: () => import('./recordes-pessoais/recordes-pessoais.module').then( m => m.RecordesPessoaisPageModule)
+  },
+  {
+    path: 'exercicios',
+    loadChildren: () => import('./exercicios/exercicios.module').then( m => m.ExerciciosPageModule)
+  },
+
+
 
 ];
 @NgModule({
