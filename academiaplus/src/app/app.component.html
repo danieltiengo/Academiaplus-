@@ -1,27 +1,26 @@
-
-  <ion-header>
+<ion-header>
     <ion-icon name="menu-outline" (click)="openFirst()"></ion-icon>
-  </ion-header>
-  
-  <ion-menu side="start" menuId="first" contentId="main">
+</ion-header>
+
+<ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
+        <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
     </ion-header>
     <ion-content>
-      <ion-list>
-        <ion-item routerLink="/inicio" (click) = "close()">Inicio</ion-item>
-        <ion-item>Ficha de treino </ion-item>
-        <ion-item>Check-in</ion-item>
-        <ion-item>Recordes Pessoais</ion-item>
-        <ion-item>Exercícios</ion-item>
-        <ion-item routerLink="/login" (click) = "close()">Login</ion-item>
-      </ion-list>
+        <ion-list>
+            <ion-item routerLink="/inicio" (click)="close()">Inicio</ion-item>
+            <ion-item routerLink="/ficha-de-treino" (click)="close()">Ficha de treino </ion-item>
+            <ion-item routerLink="/check-in" (click)="close()">Check-in</ion-item>
+            <ion-item routerLink="/recordes-pessoais" (click)="close()">Recordes Pessoais</ion-item>
+            <ion-item routerLink="/exercicios" (click)="close()">Exercícios</ion-item>
+            <ion-item routerLink="/login" (click)="close()">Login</ion-item>
+        </ion-list>
     </ion-content>
-  </ion-menu>
-  
-  <ion-app>
+</ion-menu>
+
+<ion-app>
     <ion-router-outlet id="main"></ion-router-outlet>
-  //<ion-router-outlet></ion-router-outlet>
+    <ion-router-outlet></ion-router-outlet>
 </ion-app>

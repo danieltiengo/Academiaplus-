@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonInfiniteScroll } from '@ionic/angular';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-inicio',
@@ -7,21 +9,25 @@ import { IonInfiniteScroll } from '@ionic/angular';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-@ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  user: User = new User
+  constructor(private router: Router) {
 
-  constructor() { }
+  }
 
   doRefresh(event) {
-  console.log('Begin async operation');
+    console.log('Begin async operation');
 
-  setTimeout(() => {
-    console.log('Async operation has ended');
-    event.target.complete();
-  }, 2000);
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
   }
-  
-  
+
+
   ngOnInit() {
+    //this.user.ajuda=true;
+    this.verificaapresentacao();
   }
 
   loadData(event) {
@@ -40,7 +46,11 @@ export class InicioPage implements OnInit {
   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
-}
 
+  verificaapresentacao() {
+    if (this.user.ajuda == false)
+      this.router.navigate(["/apresentacao"])
+  }
+}
 
 
