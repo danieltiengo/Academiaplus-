@@ -8,12 +8,14 @@ import { RecordesPessoaisPageRoutingModule } from './recordes-pessoais-routing.m
 
 import { RecordesPessoaisPage } from './recordes-pessoais.page';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RecordesPessoaisPageRoutingModule
+    RecordesPessoaisPageRoutingModule,
   ],
   declarations: [RecordesPessoaisPage]
 })
