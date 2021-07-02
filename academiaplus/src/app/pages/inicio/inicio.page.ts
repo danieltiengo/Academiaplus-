@@ -48,7 +48,7 @@ export class InicioPage implements OnInit {
   }
 
   verificaapresentacao() {
-    if (this.user.ajuda == false)
+  // if (this.user.ajuda == false)
       this.router.navigate(["/apresentacao"])
   }
 }
